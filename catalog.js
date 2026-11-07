@@ -3669,5 +3669,27 @@ const courses = [
       title: `第 ${index + 1} 节`
     })),
     links: []
+  },
+  {
+    id: "linux",
+    name: "Linux 命令行入门",
+    category: "计算机基础",
+    description: "Ubuntu 官方入门教程。按原文目录学习，每项都可跳转到对应章节。",
+    items: [
+      ["opening-a-terminal", "打开终端与理解路径"],
+      ["creating-folders-and-files", "创建目录与文件"],
+      ["moving-and-manipulating-files", "移动、复制与删除文件"],
+      ["a-bit-of-plumbing", "使用管道组合命令"],
+      ["the-command-line-and-the-superuser", "超级用户、sudo 与软件安装"],
+      ["hidden-files", "查看与操作隐藏文件"],
+      ["cleaning-up", "清理练习文件并退出终端"],
+      ["further-reading", "延伸阅读"]
+    ].map(([id, title], index) => ({
+      id,
+      label: "第 " + (index + 1) + " 章",
+      title,
+      link: { label: "Ubuntu 原文", href: "https://ubuntu.com/desktop/docs/en/latest/tutorial/the-linux-command-line-for-beginners/#" + id }
+    })),
+    links: [{ label: "Ubuntu 官方教程", href: "https://ubuntu.com/desktop/docs/en/latest/tutorial/the-linux-command-line-for-beginners/" }]
   }
 ];
