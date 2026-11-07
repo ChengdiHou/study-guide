@@ -1,0 +1,92 @@
+* { box-sizing: border-box; }
+:root {
+  color-scheme: light;
+  --ink: #172a23;
+  --muted: #4f635a;
+  --paper: #f4f5ed;
+  --card: #fffef8;
+  --line: #d8ded3;
+  --forest: #143b2d;
+  --leaf: #d6ee9a;
+  --accent: #33734d;
+  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+}
+body { margin: 0; background: var(--paper); color: var(--ink); }
+h1, h2, h3, p { margin: 0; }
+a { color: var(--forest); text-underline-offset: 4px; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid #4b835e; outline-offset: 3px; }
+[hidden] { display: none !important; }
+.wrap { width: min(1160px, calc(100% - 56px)); margin-inline: auto; }
+.skip { position: absolute; top: 0; left: 12px; z-index: 2; padding: 10px; background: white; transform: translateY(-120%); }
+.skip:focus { transform: none; }
+.hero {
+  background: radial-gradient(ellipse at 80% 0, #285440, transparent 55%), var(--forest);
+  color: #f6fae9;
+  border-bottom: 4px solid var(--leaf);
+}
+.hero-inner { display: grid; grid-template-columns: 1fr 230px; align-items: end; gap: 30px; padding-block: 38px 35px; }
+.eyebrow { color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .13em; }
+.hero .eyebrow { color: var(--leaf); }
+.signal { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--leaf); margin-right: 7px; }
+h1 { margin-block: 10px; font-size: clamp(32px, 5vw, 58px); line-height: 1.13; letter-spacing: -.065em; }
+.intro { color: #e0ead9; line-height: 1.65; }
+.overview { background: #f6fae910; border: 1px solid #f6fae94a; border-radius: 15px; padding: 14px 17px; }
+.overview-value { margin-block: 6px; font-size: 25px; font-weight: 750; }
+progress { appearance: none; display: block; width: 100%; height: 6px; border: 0; border-radius: 10px; background: #e0e7dd; overflow: hidden; }
+progress::-webkit-progress-bar { background: transparent; }
+progress::-webkit-progress-value { background: var(--accent); border-radius: 10px; }
+progress::-moz-progress-bar { background: var(--accent); border-radius: 10px; }
+.overview progress { background: #ffffff36; }
+.overview progress::-webkit-progress-value { background: var(--leaf); }
+.overview progress::-moz-progress-bar { background: var(--leaf); }
+.layout { display: grid; grid-template-columns: 265px minmax(0, 1fr); gap: 26px; align-items: start; padding-block: 25px 52px; }
+.shelf, .content { border: 1px solid var(--line); background: var(--card); border-radius: 16px; }
+.shelf { padding: 18px 12px 12px; }
+.shelf h2 { font-size: 15px; padding: 0 9px 10px; }
+.course-link { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 10px 9px; border-radius: 8px; text-decoration: none; font-size: 13px; line-height: 1.5; }
+.course-link:hover, .course-link[aria-current] { background: #e9efda; }
+.course-link[aria-current] { font-weight: 800; box-shadow: inset 3px 0 var(--accent); }
+.small-count, .item-meta { color: var(--muted); font-variant-numeric: tabular-nums; }
+.small-count { white-space: nowrap; }
+.backup { border-top: 1px solid var(--line); padding: 12px 9px 3px; margin-top: 10px; font-size: 12px; color: var(--muted); line-height: 1.6; }
+.backup-buttons { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+button { border: 1px solid var(--line); color: var(--ink); background: var(--card); border-radius: 8px; padding: 6px 10px; }
+button:hover { background: #eef2e6; }
+#storage-message:not(:empty) { margin-top: 6px; color: #684318; }
+.course-head { padding: 21px 23px 16px; border-bottom: 1px solid var(--line); }
+.course-head h2 { font-size: clamp(24px, 3.4vw, 34px); margin-block: 5px 7px; line-height: 1.2; }
+#description { color: var(--muted); font-size: 14px; line-height: 1.65; }
+.links { display: flex; flex-wrap: wrap; gap: 7px 15px; margin-block: 10px 15px; font-size: 13px; }
+.course-progress { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 13px; }
+.course-progress span { white-space: nowrap; }
+.toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 23px; border-bottom: 1px solid var(--line); }
+.toolbar input { min-width: 0; width: min(280px, 100%); padding: 7px 10px; border: 1px solid var(--line); background: white; border-radius: 8px; }
+.filters { display: flex; flex-wrap: wrap; gap: 4px; font-size: 13px; }
+.filters [aria-pressed="true"] { background: var(--forest); border-color: var(--forest); color: white; }
+.group { margin: 0; padding: 9px 23px; font-size: 12px; background: #edf1e4; border-bottom: 1px solid var(--line); color: var(--forest); }
+.item { display: flex; justify-content: space-between; gap: 12px; align-items: center; min-height: 48px; padding: 8px 23px; border-bottom: 1px solid #e8ece3; }
+.item:last-child { border-bottom: 0; border-radius: 0 0 16px 16px; }
+.item:has(input:checked) { background: #edf4e4; }
+.item.reference { color: var(--muted); background: #f8f9f3; }
+.item-label { display: flex; align-items: center; gap: 11px; flex: 1; min-width: 0; }
+label.item-label { cursor: pointer; }
+.item-label input { width: 18px; height: 18px; margin: 0; flex: none; accent-color: var(--accent); }
+.detail { display: flex; align-items: baseline; flex-wrap: wrap; gap: 2px 8px; }
+.item-code { font-size: 11px; font-weight: 700; color: var(--accent); }
+.item-title { font-size: 14px; overflow-wrap: anywhere; }
+.item-extra { display: flex; align-items: baseline; justify-content: flex-end; flex-wrap: wrap; gap: 3px 9px; min-width: 0; font-size: 12px; text-align: right; overflow-wrap: anywhere; }
+.empty { padding: 25px; color: var(--muted); }
+@media (max-width: 780px) {
+  .layout { grid-template-columns: 1fr; gap: 14px; }
+  .shelf nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3px; }
+}
+@media (max-width: 520px) {
+  .wrap { width: calc(100% - 26px); }
+  .hero-inner { grid-template-columns: 1fr; gap: 13px; padding-block: 22px; }
+  .course-head, .toolbar, .item, .group { padding-inline: 13px; }
+  .toolbar { flex-wrap: wrap; }
+  .toolbar input { width: 100%; }
+  .item-extra { max-width: 38%; }
+}
