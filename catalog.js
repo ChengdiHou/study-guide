@@ -3691,5 +3691,30 @@ const courses = [
       link: { label: "Ubuntu 原文", href: "https://ubuntu.com/desktop/docs/en/latest/tutorial/the-linux-command-line-for-beginners/#" + id }
     })),
     links: [{ label: "Ubuntu 官方教程", href: "https://ubuntu.com/desktop/docs/en/latest/tutorial/the-linux-command-line-for-beginners/" }]
+  },
+  {
+    id: "research-reading",
+    name: "科研入门阅读",
+    category: "科研方法",
+    description: "按清单逐项阅读。John Schulman 的博客本次访问超时，对应条目提供全文镜像。",
+    items: [
+      ["hamming-you-and-your-research","Richard Hamming","You and Your Research（你与你的研究）","https://www.cs.virginia.edu/~robins/YouAndYourResearch.html","弗吉尼亚大学全文"],
+      ["graham-great-work","Paul Graham","How to Do Great Work（如何做出出色的工作）","https://www.paulgraham.com/greatwork.html","作者官网"],
+      ["schulman-ml-research","John Schulman","An Opinionated Guide to ML Research（机器学习研究指南）","https://fd.xuwubk.eu.org/http/joschu.net/blog/opinionated-guide-ml-research.html","全文镜像"],
+      ["steinhardt-research-decisions","Jacob Steinhardt","Research as a Stochastic Decision Process（将研究视为随机决策过程）","https://cs.stanford.edu/~jsteinhardt/ResearchasaStochasticDecisionProcess.html","Stanford 托管原文"],
+      ["karpathy-phd","Andrej Karpathy","A Survival Guide to a PhD（博士生存指南）","https://karpathy.github.io/2016/09/07/phd/","作者博客"],
+      ["perez-empirical-alignment","Ethan Perez","Tips for Empirical Alignment Research（实证对齐研究建议）","https://www.alignmentforum.org/posts/dZFpEdKyb9Bf4xYn7/tips-for-empirical-alignment-research","作者发布页"],
+      ["nanda-research-taste","Neel Nanda","My Research Process: Understanding and Cultivating Research Taste（理解并培养研究品味）","https://forum.effectivealtruism.org/posts/puEjjCAHkbrLz8nbc/my-research-process-understanding-and-cultivating-research-taste","作者发布页"],
+      ["liu-nlp-research","刘知远","NLP 研究入门之道","https://github.com/zibuyu/research_tao","GitHub 中文系列"]
+    ].map(([id, author, title, href, source]) => ({
+      id,
+      label: author,
+      title,
+      link: { label: source, href }
+    })),
+    links: [
+      { label: "Schulman 博客原址", href: "https://joschu.net/blog/opinionated-guide-ml-research.html" },
+      { label: "MIT CSAIL 资源索引", href: "https://people.csail.mit.edu/fredo/student.html" }
+    ]
   }
 ];
