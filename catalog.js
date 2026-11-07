@@ -3658,5 +3658,16 @@ const courses = [
         "href": "https://www.youtube.com/playlist?list=PL6BsET-8jgYULSxiV2garZ0FxbnXR08MP"
       }
     ]
+  },
+  {
+    id: "ros2",
+    name: "ROS 2",
+    category: "机器人",
+    description: "共 171 节，按课次编号记录。",
+    items: Array.from({ length: 171 }, (_, index) => ({
+      id: String(index + 1),
+      title: `第 ${index + 1} 节`
+    })),
+    links: []
   }
 ];
